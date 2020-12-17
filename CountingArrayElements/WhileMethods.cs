@@ -11,8 +11,25 @@ namespace CountingArrayElements
         /// <returns>The number of occurrences of empty strings.</returns>
         public static int GetEmptyStringCount(string[] arrayToSearch)
         {
-            // TODO #4. Analyze the implementation of "GetEmptyStringCountRecursive" method, and implement the method using the "while" loop statement.
-            throw new NotImplementedException();
+            if (arrayToSearch is null)
+            {
+                throw new ArgumentNullException(nameof(arrayToSearch));
+            }
+
+            int count = 0;
+            int result = 0;
+
+            while (arrayToSearch.Length > count)
+            {
+                if (string.IsNullOrEmpty(arrayToSearch[count]))
+                {
+                    result++;
+                }
+
+                count++;
+            }
+
+            return result;
         }
 
         /// <summary>
@@ -22,8 +39,25 @@ namespace CountingArrayElements
         /// <returns>The number of occurrences of long integers with minimum and maximum values.</returns>
         public static int GetMinOrMaxLongCount(long[] arrayToSearch)
         {
-            // TODO #5. Analyze the implementation of "GetMinOrMaxLongCount" method, and implement the method using the "while" loop statement.
-            throw new NotImplementedException();
+            if (arrayToSearch is null)
+            {
+                throw new ArgumentNullException(nameof(arrayToSearch));
+            }
+
+            int count = 0;
+            int result = 0;
+
+            while (arrayToSearch.Length > count)
+            {
+                if (arrayToSearch[count] == long.MinValue || arrayToSearch[count] == long.MaxValue)
+                {
+                    result++;
+                }
+
+                count++;
+            }
+
+            return result;
         }
 
         /// <summary>
@@ -33,8 +67,25 @@ namespace CountingArrayElements
         /// <returns>The number of occurrences of null values.</returns>
         public static int GetNullObjectCount(object[] arrayToSearch)
         {
-            // TODO #6. Analyze the implementation of "GetNullObjectCountRecursive" method, and implement the method using the "while" loop statement.
-            throw new NotImplementedException();
+            if (arrayToSearch is null)
+            {
+                throw new ArgumentNullException(nameof(arrayToSearch));
+            }
+
+            int count = 0;
+            int result = 0;
+
+            while (arrayToSearch.Length > count)
+            {
+                if (arrayToSearch[count] is null)
+                {
+                    result++;
+                }
+
+                count++;
+            }
+
+            return result;
         }
 
         /// <summary>

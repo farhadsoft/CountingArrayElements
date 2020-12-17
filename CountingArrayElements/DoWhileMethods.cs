@@ -11,8 +11,25 @@ namespace CountingArrayElements
         /// <returns>The number of occurrences of false values.</returns>
         public static int GetFalseValueCount(bool[] arrayToSearch)
         {
-            // TODO #7. Analyze the implementation of "GetFalseValueCountRecursive" methods, and implement the method using the "do..while" loop statement.
-            throw new NotImplementedException();
+            if (arrayToSearch is null)
+            {
+                throw new ArgumentNullException(nameof(arrayToSearch));
+            }
+
+            int count = 0;
+            int result = 0;
+            do
+            {
+                if (!arrayToSearch[count])
+                {
+                    result++;
+                }
+
+                count++;
+            }
+            while (arrayToSearch.Length > count);
+
+            return result;
         }
 
         /// <summary>
@@ -22,8 +39,25 @@ namespace CountingArrayElements
         /// <returns>The number of occurrences of zero values.</returns>
         public static int GetZeroDecimalCount(decimal[] arrayToSearch)
         {
-            // TODO #8. Analyze the implementation of "GetZeroDecimalCountRecursive" methods, and implement the method using the "do..while" loop statement.
-            throw new NotImplementedException();
+            if (arrayToSearch is null)
+            {
+                throw new ArgumentNullException(nameof(arrayToSearch));
+            }
+
+            int count = 0;
+            int result = 0;
+            do
+            {
+                if (arrayToSearch[count] == 0)
+                {
+                    result++;
+                }
+
+                count++;
+            }
+            while (arrayToSearch.Length > count);
+
+            return result;
         }
 
         /// <summary>
@@ -33,8 +67,26 @@ namespace CountingArrayElements
         /// <returns>The number of occurrences of numbers that can be rounded to even.</returns>
         public static int GetRoundedToEvenCount(double[] arrayToSearch)
         {
-            // TODO #9. Analyze the implementation of "GetRoundedToEvenCountRecursive" methods, and implement the method using the "do..while" loop statement.
-            throw new NotImplementedException();
+            if (arrayToSearch is null)
+            {
+                throw new ArgumentNullException(nameof(arrayToSearch));
+            }
+
+            int count = 0;
+            int result = 0;
+            do
+            {
+                double round = Math.Round(arrayToSearch[count], MidpointRounding.ToEven);
+                if (round % 2 == 0)
+                {
+                    result++;
+                }
+
+                count++;
+            }
+            while (arrayToSearch.Length > count);
+
+            return result;
         }
 
         /// <summary>
