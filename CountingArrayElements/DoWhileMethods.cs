@@ -121,14 +121,7 @@ namespace CountingArrayElements
                 return 0;
             }
 
-            int middleIndex = arrayToSearch.Length / 2;
-            decimal[] leftArrayToSearch = arrayToSearch[..middleIndex];
-            decimal[] rightArrayToSearch = arrayToSearch[middleIndex..];
-
-            int leftArrayCount = GetZeroDecimalCountRecursive(leftArrayToSearch, 0);
-            int rightArrayCount = GetZeroDecimalCountRecursive(rightArrayToSearch, 0);
-
-            return leftArrayCount + rightArrayCount;
+            return GetZeroDecimalCountRecursive(arrayToSearch, 0);
         }
 
         /// <summary>
@@ -174,11 +167,7 @@ namespace CountingArrayElements
                     return 0;
                 }
 
-                int middleIndex = array.Length / 2;
-                double[] leftArrayToSearch = array[..middleIndex];
-                double[] rightArrayToSearch = array[middleIndex..];
-
-                return ProcessArray(leftArrayToSearch) + ProcessArray(rightArrayToSearch);
+                return ProcessArray(array);
             }
 
             return GetRoundedToEvenCountRecursive(arrayToSearch);
